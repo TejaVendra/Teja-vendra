@@ -8,7 +8,7 @@ import Contact from './pages/Contact'
 import Footer from './pages/Footer'
 import Education from './pages/Education'
 import SocialBar from './things/SocialBar'
-import HomeButton from './things/Homebutton'
+import HomeButton from './things/HomeButton'
 function App() {
   
 
