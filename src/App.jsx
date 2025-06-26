@@ -9,6 +9,7 @@ import Footer from './pages/Footer'
 import Education from './pages/Education'
 import SocialBar from './things/SocialBar'
 import HomeButton from './things/HomeButton'
+import NotFound from './pages/NotFound'
 function App() {
   
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Education" element={<Education />} />
         <Route path="/Skills" element={<Skills />} />
         <Route path="/Contact" element={<Contact />} />
+        <Route path='*' element={<NotFound/>}/>
       </Routes>
 
       <Footer />
