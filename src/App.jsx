@@ -7,7 +7,7 @@ import Skills from './pages/Skills'
 import Contact from './pages/Contact'
 import Footer from './pages/Footer'
 import Education from './pages/Education'
-import SocialBar from './things/socialBar'
+import SocialBar from './things/SocialBar'
 import HomeButton from './things/Homebutton'
 function App() {
   
