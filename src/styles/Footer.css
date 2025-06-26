@@ -1,0 +1,103 @@
+/* Footer.css */
+
+.footer-section {
+  background-color: #0d1117;
+  color: #e6edf3;
+  padding: 2rem 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.quick-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.quick-heading {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #58a6ff;
+  text-align: center;
+}
+
+.quick-links-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.quick-nav-section,
+.quick-connections-section {
+  min-width: 200px;
+}
+
+.quick-nav-section {
+  padding-right: 2rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.quick-connections-section {
+  padding-left: 2rem;
+}
+
+.quick-nav-section ul,
+.quick-connections-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.quick-nav-section li,
+.quick-connections-section li {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.quick-nav-section a,
+.quick-connections-section a {
+  color: #e6edf3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.quick-nav-section a:hover,
+.quick-connections-section a:hover {
+  color: #58a6ff;
+}
+
+.footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .quick-links-section {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .quick-nav-section {
+    border-right: none;
+    padding-right: 0;
+  }
+
+  .quick-connections-section {
+    padding-left: 0;
+    border-left: none;
+  }
+
+  .quick-heading {
+    font-size: 1.2rem;
+  }
+}

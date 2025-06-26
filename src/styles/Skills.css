@@ -1,0 +1,132 @@
+.skills-section {
+  padding: 4rem 1.5rem;
+  background-color: #0d0d0d;
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.skills-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.underline {
+  width: 80px;
+  height: 4px;
+  background-color: #ffffff;
+  margin: 0 auto 3rem auto;
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* Shared block style */
+.skills-block,
+.skills-category {
+  background-color: #1a1a1a;
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  width: 300px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.skills-block:hover,
+.skills-category:hover {
+  transform: translateY(-5px);
+}
+
+.skills-block h3,
+.skills-category h3 {
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  color: #fdfdfd;
+}
+
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills-tags span,
+.design-icons span {
+  background-color: #2b2b2b;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #e5e5e5;
+  transition: background-color 0.3s;
+}
+
+.skills-tags span:hover,
+.design-icons span:hover {
+  background-color: #3c3c3c;
+}
+
+.design-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* Tools / Learning lists */
+.skills-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-block ul li {
+  padding: 0.4rem 0;
+  font-size: 0.95rem;
+  color: #cccccc;
+}
+
+/* Inner skill-item format */
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  background-color: #2b2b2b;
+  padding: 0.4rem 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 0.6rem;
+  color: #e5e5e5;
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skills-block,
+  .skills-category {
+    width: 90%;
+  }
+}

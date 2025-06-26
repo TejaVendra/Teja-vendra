@@ -1,0 +1,144 @@
+.about-section{
+    height: 100vh;
+    scroll-behavior: smooth;
+}/* About.css */
+.about-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 4rem;
+ background-color: #111111;
+
+  color: #f0f0f0;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', sans-serif;
+  position: relative;
+  flex-wrap: wrap;
+}
+
+.about-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  width: fit-content;
+  padding-bottom: 0.5rem;
+}
+
+.about-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60%;
+  height: 3px;
+  background-color: #f0f0f0;
+  border-radius: 2px;
+}
+
+.about-text {
+  flex: 1;
+  padding-right: 2rem;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  color: #ccc;
+}
+
+.about-text .intro,
+.about-text .thanks {
+  font-weight: 500;
+  color: #fff;
+}
+
+.about-text .signature {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.about-image img {
+  width: 300px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+}
+
+/* Vertical divider */
+.about-container::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-0.5px);
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, #444, transparent);
+  z-index: 1;
+}
+
+/* Decorative circle in the center */
+.about-container::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #666;
+  border-radius: 50%;
+  z-index: 3;
+  box-shadow: 0 0 10px #666;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    padding: 2rem;
+  }
+
+  .about-text,
+  .about-image {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .about-container::before,
+  .about-container::after {
+    display: none;
+  }
+
+  .about-heading::after {
+    width: 100%;
+  }
+
+  .about-image img {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 2rem;
+  }
+}
