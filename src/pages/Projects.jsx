@@ -4,6 +4,22 @@ import { motion } from "framer-motion";
 
 function Projects() {
   const projects = [
+    {
+      title: "Raju Welding Shop Website",
+      description: "A full-stack business website for a local welding shop, built with React for the frontend and Django for the backend. Includes product image display, contact form, and responsive UI.",
+      tech: ["React", "CSS", "Framer Motion", "Django", "Cloudinary"],
+      image: "/rajuwelding.png", // update with your actual image path
+      github: "https://github.com/TejaVendra/Raju-welding",
+      demo: "https://raju-weldings.onrender.com", // live deployed link
+    },
+    {
+      title: "Student Management System",
+      description: "A web-based application with separate interfaces for Admin and Students. Students can view the list of all students, while Admins have full access to perform CRUD (Create, Read, Update, Delete) operations on student records.",
+      tech: ["HTML", "CSS", "JavaScript"],
+      image: "/PROJECT-02.png", // update with your actual image path
+      github: "https://github.com/TejaVendra/studentManagement", // update with actual repo
+      demo: "https://tejavendra.github.io/studentManagement/", // optional, update if available
+},
    {
       title: "WEB Wallet",
       description: "An online ATM simulation where users can perform essential banking operations like deposits, withdrawals, and balance checks—similar to how a physical ATM works. Built to replicate ATM functionality in a web environment.",
@@ -12,24 +28,8 @@ function Projects() {
       github: "https://github.com/TejaVendra/WEB-WALLET.com", // update with actual repo
       demo: "https://tejavendra.github.io/WEB-WALLET.com/", // optional, update if available
     },
+   
 
-    {
-      title: "Student Management System",
-      description: "A web-based application with separate interfaces for Admin and Students. Students can view the list of all students, while Admins have full access to perform CRUD (Create, Read, Update, Delete) operations on student records.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "/PROJECT-02.png", // update with your actual image path
-      github: "https://github.com/TejaVendra/studentManagement", // update with actual repo
-      demo: "https://tejavendra.github.io/studentManagement/", // optional, update if available
-}
-,
-    {
-      title: "Portfolio Website",
-      description: "A sleek personal portfolio to showcase my skills, built using React ,CSS and Django   .",
-      tech: ["React", "CSS", "Framer Motion","Django"],
-      image: "/portfolio.png", // update with your image path
-      github: "https://github.com/yourusername/portfolio",
-      demo: "https://yourdomain.com", // optional
-    },
   ];
 
   return (
