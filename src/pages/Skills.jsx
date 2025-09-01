@@ -1,7 +1,7 @@
 import "../styles/Skills.css";
 import { FaReact, FaDatabase } from "react-icons/fa";
 import { FaWrench, FaLightbulb, FaPaintBrush } from "react-icons/fa";
-import { SiDjango, SiMysql, SiSqlite } from "react-icons/si";
+import { SiDjango, SiMysql, SiSqlite , SiExpress } from "react-icons/si";
 import { FaCog } from "react-icons/fa";
 import { FaCubes } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
@@ -26,7 +26,6 @@ function Skills() {
             <span>CSS3</span>
             <span>Django</span>
             <span>Node js</span>
-            <span>Express js</span>
           </div>
         </div>
 
@@ -38,6 +37,7 @@ function Skills() {
               <div className="skill-item"><FaReact /> React.js</div>
               <div className="skill-item"><SiDjango /> rest Framework</div>
               <div className="skill-item"><SiTailwindcss /> Tailwind css</div>
+              <div className="skill-item"><SiExpress /> express jss</div>
             </div>
           </div>
 
