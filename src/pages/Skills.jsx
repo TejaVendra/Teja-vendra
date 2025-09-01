@@ -25,6 +25,8 @@ function Skills() {
             <span>HTML5</span>
             <span>CSS3</span>
             <span>Django</span>
+            <span>Node js</span>
+            <span>Express js</span>
           </div>
         </div>
 
