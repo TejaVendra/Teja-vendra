@@ -35,7 +35,7 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
-         Web Developer & Aspiring Data Engineer
+         Web & GenAI Developer  
         </motion.p>
 
         {/* Optional: You can add a short subtext */}
@@ -45,7 +45,7 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: 1 }}
         >
-       Passionate about building full-stack applications and exploring scalable data systems.
+      Focused on building modern full-stack applications and integrating advanced AI solutions.
         </motion.p>
       </motion.div>
 

@@ -1,7 +1,7 @@
 import "../styles/Skills.css";
 import { FaReact, FaDatabase } from "react-icons/fa";
 import { FaWrench, FaLightbulb, FaPaintBrush } from "react-icons/fa";
-import { SiDjango, SiMysql, SiSqlite , SiExpress } from "react-icons/si";
+import { SiDjango, SiMysql, SiSqlite , SiExpress, SiMongodb, SiLangchain } from "react-icons/si";
 import { FaCog } from "react-icons/fa";
 import { FaCubes } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
@@ -37,7 +37,8 @@ function Skills() {
               <div className="skill-item"><FaReact /> React.js</div>
               <div className="skill-item"><SiDjango /> rest Framework</div>
               <div className="skill-item"><SiTailwindcss /> Tailwind css</div>
-              <div className="skill-item"><SiExpress /> express jss</div>
+              <div className="skill-item"><SiExpress /> express js</div>
+              <div className="skill-item"><SiLangchain /> Langchain</div>
             </div>
           </div>
 
@@ -48,6 +49,7 @@ function Skills() {
             <div className="skills-grid">
               <div className="skill-item"><SiMysql /> MySQL</div>
               <div className="skill-item"><SiSqlite /> SQLite</div>
+              <div className="skill-item"><SiMongodb /> Mongodb</div>
             </div>
           </div>
 
@@ -74,17 +76,18 @@ function Skills() {
         </div>
 
         {/* Knowledge */}
-        <div className="skills-block">
-          <h3><FaLightbulb /> Learning</h3>
-          <ul>
-            <li>Data Engineering Concepts</li>
-            <li>SQL Optimization</li>
-            <li>ETL Pipelines</li>
-            <li>API Integration</li>
-            <li>System Design Basics</li>
-            <li>Python Libraries</li>
-          </ul>
-        </div>
+      <div className="skills-block">
+        <h3><FaLightbulb /> Currently Learning</h3>
+        <ul>
+          <li>LLM Architectures & Training</li>
+          <li>Transformer Variants (BERT, GPT, LLaMA)</li>
+          <li>Advanced Fine-tuning (LoRA, QLoRA)</li>
+          <li>Vector Databases (FAISS, Pinecone)</li>
+          <li>Multimodal & Diffusion Models</li>
+          <li>RLHF & AI Safety</li>
+        </ul>
+      </div>
+
       </div>
     </section>
   );
