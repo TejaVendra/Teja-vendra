@@ -13,6 +13,22 @@ function Projects() {
       demo: "https://raju-weldings.onrender.com", // live deployed link
     },
     {
+      title: "FrameStack - Website Builder Platform",
+      description: "A comprehensive full-stack web development platform similar to Wix, enabling users to create, customize, and deploy professional websites. Features include drag-and-drop interface, pre-built templates, real-time project tracking, user authentication, payment integration, and automated deployment. Administrators can manage projects, communicate with clients, and handle orders efficiently.",
+      tech: ["React", "Django", "PostgreSQL", "Cloudinary", "Framer Motion", "Tailwind CSS"],
+      image: "/framestack.png",
+      github: "https://github.com/TejaVendra/framestack",
+      demo: "https://framestack.onrender.com/",
+    },
+{
+      title: "Study Assistance - AI-Powered Learning Tool",
+      description: "An intelligent study companion that leverages AI to generate customized questions and quizzes from uploaded PDF documents. Users can upload study materials, select difficulty levels, and receive AI-generated practice questions to enhance learning. Features include PDF parsing, natural language processing, question generation algorithms, and progress tracking for effective exam preparation.",
+      tech: ["Python", "GEMINI API", "Django", "React", "PyPDF2", "LangChain", "SQLlite", "Tailwind CSS"],
+      image: "/study-assistance.png",
+      github: "https://github.com/TejaVendra/-Study-assistant",
+      demo: "https://study-assistant04.onrender.com/",
+    },
+    {
       title: "Student Management System",
       description: "A web-based application with separate interfaces for Admin and Students. Students can view the list of all students, while Admins have full access to perform CRUD (Create, Read, Update, Delete) operations on student records.",
       tech: ["HTML", "CSS", "JavaScript"],
