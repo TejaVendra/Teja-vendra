@@ -1,0 +1,564 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&family=Indie+Flower&display=swap');
+
+:root {
+  --parchment-light: #f4e4bc;
+  --parchment-dark: #d3c098;
+  --ink-color: #2c1810;
+  --path-color: #8b4513;
+  --accent-orange: #e67e22;
+  --pin-gold: #f1c40f;
+  --red-cross: #c0392b;
+}
+
+.pirate-map-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #1a3a5c 0%, #0d1b2a 100%);
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.map-paper {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 90vh;
+  max-height: 900px;
+  background-color: var(--parchment-light);
+  background-image: 
+    radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.06) 100%),
+    url("data:image/svg+xml,%3Csvg width='200' height='200' viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.12'/%3E%3C/svg%3E");
+  border-radius: 3px;
+  box-shadow: 
+    inset 0 0 40px rgba(0,0,0,0.2),
+    0 0 0 5px #5c4033,
+    0 0 0 10px #3e2723,
+    10px 10px 30px rgba(0,0,0,0.7);
+  overflow: hidden;
+  font-family: 'Indie Flower', cursive;
+}
+
+/* ===== MAP TITLE ===== */
+.map-title {
+  position: absolute;
+  
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-family: 'Pirata One', cursive;
+  font-size: 2.6rem;
+  color: var(--ink-color);
+  margin: 0;
+  text-shadow: 2px 2px 0 rgba(0,0,0,0.15);
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* ===== COMPASS ===== */
+.compass-rose {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.55);
+  border: 3px solid var(--ink-color);
+  border-radius: 50%;
+  z-index: 50;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+}
+
+.compass-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s ease;
+}
+
+.compass-n {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Pirata One', cursive;
+  font-size: 9px;
+  font-weight: bold;
+  color: var(--ink-color);
+}
+
+.compass-needle-n {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 12px solid var(--red-cross);
+}
+
+.compass-needle-s {
+  position: absolute;
+  bottom: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 10px solid #7f8c8d;
+}
+
+/* ===== MAP DETAILS - More decorations ===== */
+.map-details {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.detail-mountain-1 {
+  position: absolute;
+  bottom: 5%;
+  left: 3%;
+  opacity: 0.3;
+  transform: scale(1.2);
+}
+
+.detail-mountain-2 {
+  position: absolute;
+  bottom: 35%;
+  right: 5%;
+  opacity: 0.25;
+  transform: scale(0.8) rotate(-10deg);
+}
+
+.hand-drawn-mountain {
+  width: 80px;
+  height: 50px;
+}
+
+/* Small Islands */
+.small-island {
+  position: absolute;
+  opacity: 0.35;
+}
+
+/* Waves decorations */
+.waves-line {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.2;
+  color: var(--ink-color);
+  letter-spacing: 8px;
+  white-space: nowrap;
+}
+
+.waves-line.w-1 {
+  bottom: 15%;
+  left: 10%;
+  transform: rotate(-5deg);
+}
+
+.waves-line.w-2 {
+  bottom: 35%;
+  right: 15%;
+  font-size: 1rem;
+}
+
+.waves-line.w-3 {
+  top: 25%;
+  right: 25%;
+  font-size: 0.9rem;
+}
+
+/* Secret dots */
+.secret-dot {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #5d4037;
+  border-radius: 50%;
+  opacity: 0.3;
+}
+
+.secret-dot.d-1 { top: 30%; left: 25%; }
+.secret-dot.d-2 { top: 50%; right: 30%; }
+.secret-dot.d-3 { bottom: 25%; left: 40%; }
+
+/* Sea creatures */
+.sea-creature {
+  position: absolute;
+  font-size: 1.2rem;
+  opacity: 0.15;
+}
+
+.sea-creature.sc-1 { bottom: 20%; left: 30%; }
+.sea-creature.sc-2 { top: 40%; right: 35%; }
+
+/* ===== PATH ===== */
+.treasure-path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.path-line {
+  fill: none;
+  stroke: var(--path-color);
+  stroke-width: 0.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.path-dots {
+  fill: none;
+  stroke: #5d4037;
+  stroke-width: 0.5;
+  stroke-dasharray: 1.5, 2;
+  stroke-linecap: round;
+}
+
+/* ===== LOCATIONS ===== */
+.location-marker {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.marker-pin {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pin-head {
+  width: 32px;
+  height: 32px;
+  background: var(--pin-gold);
+  border: 2px solid var(--ink-color);
+  border-radius: 50% 50% 50% 0;
+  transform: rotate(-45deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 2px 2px 0 rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.pin-head svg, .pin-head text {
+  transform: rotate(45deg);
+}
+
+.pin-point {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid var(--ink-color);
+}
+
+/* DREAM JOB - Black with Red X */
+.dream-job-marker .pin-head {
+  background: #f5f5f5 !important;
+  border: 3px solid var(--ink-color) !important;
+}
+
+.dream-job-marker:hover .pin-head,
+.dream-job-marker.active .pin-head {
+  background: #ffebee !important;
+  transform: rotate(-45deg) scale(1.15);
+  box-shadow: 0 0 12px rgba(192, 57, 43, 0.5);
+}
+
+.red-x-mark {
+  animation: xPulse 2s infinite;
+}
+
+@keyframes xPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.dream-job-label {
+  color: var(--ink-color) !important;
+  border-color: var(--ink-color) !important;
+  font-weight: bold;
+}
+
+.anchor-drawing {
+  opacity: 0.7;
+}
+
+.location-marker:hover .pin-head,
+.location-marker.active .pin-head {
+  background: var(--accent-orange);
+  transform: rotate(-45deg) scale(1.15);
+  box-shadow: 0 0 12px rgba(230, 126, 34, 0.5);
+}
+
+.marker-label {
+  margin-top: 6px;
+  font-family: 'Pirata One', cursive;
+  font-size: 0.85rem;
+  color: var(--ink-color);
+  white-space: nowrap;
+  background: rgba(244, 228, 188, 0.9);
+  padding: 3px 10px;
+  border-radius: 3px;
+  border: 1px solid var(--ink-color);
+}
+
+/* Tooltip - NO treasure on Dream Job */
+.map-tooltip {
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 210px;
+  background: rgba(244, 228, 188, 0.98);
+  border: 2px solid var(--ink-color);
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 4px 4px 0 rgba(0,0,0,0.2);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s ease;
+  z-index: 30;
+}
+
+.map-tooltip::before {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 10px 8px 0;
+  border-style: solid;
+  border-color: var(--ink-color) transparent transparent transparent;
+}
+
+.location-marker:hover .map-tooltip {
+  opacity: 1;
+  visibility: visible;
+  top: -158px;
+}
+
+.map-tooltip h3 {
+  margin: 0 0 3px 0;
+  font-family: 'Pirata One', cursive;
+  font-size: 1.2rem;
+  color: var(--ink-color);
+}
+
+.map-tooltip .year {
+  display: block;
+  font-weight: bold;
+  color: #6d4c41;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+}
+
+.map-tooltip p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+  color: #3e2723;
+}
+
+/* ===== PLAYER SHIP ===== */
+.player-ship-wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: 25;
+  transition: left 0.8s linear, top 0.8s linear;
+  pointer-events: none;
+}
+
+.ship-model {
+  position: relative;
+  width: 50px;
+  height: 45px;
+}
+
+.ship-hull {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 20px;
+  background: linear-gradient(to right, #5d4037, #795548, #5d4037);
+  border-radius: 0 0 20px 20px;
+  border: 2px solid var(--ink-color);
+}
+
+.ship-mast {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 3px;
+  height: 25px;
+  background: #4e342e;
+}
+
+.ship-sail {
+  position: absolute;
+  top: -16px;
+  left: -12px;
+  width: 28px;
+  height: 18px;
+  background: #f5f5f5;
+  border: 1.5px solid #9e9e9e;
+  border-radius: 0 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+}
+
+.ship-flag {
+  position: absolute;
+  top: -34px;
+  left: 12px;
+  font-size: 12px;
+  animation: flagWave 0.6s infinite alternate;
+  transform-origin: left top;
+}
+
+@keyframes flagWave {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(15deg); }
+}
+
+.ship-wake {
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 12px;
+  background: rgba(74, 144, 164, 0.35);
+  border-radius: 50%;
+  filter: blur(3px);
+  animation: wakeBob 1.2s infinite;
+}
+
+@keyframes wakeBob {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.35; }
+  50% { transform: translateX(-50%) scale(1.2); opacity: 0.15; }
+}
+
+/* ===== NPC SHIPS ===== */
+.npc-ship-wrapper {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.npc-ship-wrapper .npc-ship-graphic {
+  width: 45px;
+  height: 35px;
+}
+
+.npc-ship-wrapper.n-1 {
+  bottom: 28%;
+  left: 15%;
+  animation: npcSail1 40s linear infinite;
+}
+
+.npc-ship-wrapper.n-2 {
+  top: 38%;
+  right: 18%;
+  animation: npcSail2 50s linear infinite reverse;
+}
+
+.npc-ship-wrapper.n-3 {
+  bottom: 18%;
+  right: 30%;
+  animation: npcSail3 45s linear infinite;
+}
+
+@keyframes npcSail1 {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(50px, -40px); }
+  50% { transform: translate(-30px, 35px); }
+  75% { transform: translate(-50px, -25px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes npcSail2 {
+  0% { transform: translate(0, 0); }
+  33% { transform: translate(-40px, 30px); }
+  66% { transform: translate(40px, -20px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes npcSail3 {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(30px, 30px) rotate(5deg); }
+  50% { transform: translate(-20px, -20px) rotate(-3deg); }
+  75% { transform: translate(20px, -30px) rotate(4deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .map-title {
+    font-size: 1.8rem;
+    top: 8px !important;
+  }
+  
+  .map-paper {
+    height: 80vh;
+  }
+  
+  .pin-head {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .marker-label {
+    font-size: 0.7rem;
+  }
+  
+  .map-tooltip {
+    width: 160px;
+    top: -120px;
+    padding: 8px;
+  }
+  
+  .map-tooltip h3 { font-size: 1rem; }
+  .map-tooltip p { font-size: 0.8rem; }
+  
+  .ship-model { transform: scale(0.7); }
+  
+  .compass-rose {
+    width: 45px;
+    height: 45px;
+    bottom: 12px;
+    right: 12px;
+  }
+  
+  .detail-mountain-1, .detail-mountain-2 {
+    display: none;
+  }
+  
+  .waves-line {
+    font-size: 0.8rem;
+  }
+}
