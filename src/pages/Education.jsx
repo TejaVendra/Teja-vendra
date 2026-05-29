@@ -83,7 +83,7 @@ const NpcShipGraphic = ({ color = "#5d4037" }) => (
 const Education = () => {
   const [currentStageIdx, setCurrentStageIdx] = useState(0);
   const [hoveredStage, setHoveredStage] = useState(null);
-  const [shipPosition, setShipPosition] = useState(educationStages[0].coords);
+  const [shipPosition, setShipPosition] = useState(educationStages[2].coords);
   const [compassRotation, setCompassRotation] = useState(0);
   const pathRef = useRef(null);
 
