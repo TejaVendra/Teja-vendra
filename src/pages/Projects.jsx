@@ -5,6 +5,15 @@ import { motion } from "framer-motion";
 function Projects() {
   const projects = [
     {
+      title: "College-X (CX)",
+      description: "A full-stack social media platform inspired by X (formerly Twitter), built using the MERN stack. Features include secure user authentication, profile customization, post creation, likes, comments, reposts, follow/unfollow functionality, image uploads, personalized feeds, notifications, and a fully responsive UI. Designed to replicate the core social networking experience of X while providing a seamless and engaging user experience.",
+      tech: ["MongoDB", "Express.js", "React", "Node.js", "JWT Authentication", "Cloudinary"],
+      image: "/cx.png", // update with your actual image path
+      github: "https://github.com/TejaVendra/cx",
+      demo: "https://cx-wh9z.onrender.com",
+      },
+
+    {
       title: "Raju Welding Shop Website",
       description: "A full-stack business website for a local welding shop, built with React for the frontend and Django for the backend. Includes product image display, contact form, and responsive UI.",
       tech: ["React", "CSS", "Framer Motion", "Django", "Cloudinary"],
@@ -36,14 +45,7 @@ function Projects() {
       github: "https://github.com/TejaVendra/studentManagement", // update with actual repo
       demo: "https://tejavendra.github.io/studentManagement/", // optional, update if available
 },
-   {
-      title: "WEB Wallet",
-      description: "An online ATM simulation where users can perform essential banking operations like deposits, withdrawals, and balance checks—similar to how a physical ATM works. Built to replicate ATM functionality in a web environment.",
-      tech: ["HTML", "CSS", "JavaScript"],
-      image: "/WEB-WALLET.png", // update with your actual image path
-      github: "https://github.com/TejaVendra/WEB-WALLET.com", // update with actual repo
-      demo: "https://tejavendra.github.io/WEB-WALLET.com/", // optional, update if available
-    },
+   
    
 
   ];
