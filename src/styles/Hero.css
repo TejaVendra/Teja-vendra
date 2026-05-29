@@ -10,72 +10,12 @@
   align-items: center;
 }
 
-/* VIDEO */
-.hero-video-container {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-}
-
-.hero-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* TEXT DURING VIDEO */
-.video-text {
-  position: absolute;
-  z-index: 20;
-  text-align: center;
-  color: white;
-  padding: 20px;
-}
-
-/* HERO CONTENT */
-.hero-content {
-  position: relative;
-  z-index: 5;
-  text-align: center;
-  padding: 20px;
-  max-width: 800px;
-}
-
-/* TYPOGRAPHY */
-.greeting {
-  color: #c0392b;
-  font-size: clamp(1.1rem, 2vw, 1.5rem);
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.hero-name {
-  color: #f4e4bc;
-  font-size: clamp(3rem, 8vw, 5rem);
-  margin-bottom: 15px;
-}
-
-.hero-bio {
-  color: #f4e4bc;
-  font-size: clamp(1.2rem, 3vw, 1.7rem);
-  margin-bottom: 20px;
-}
-
-.hero-tagline {
-  color: rgba(244, 228, 188, 0.75);
-  max-width: 650px;
-  margin: auto;
-  line-height: 1.8;
-}
-
 /* PARTICLES */
 .particles-bg {
   position: absolute;
   inset: 0;
   overflow: hidden;
   z-index: 1;
-  background: #000;
 }
 
 .particles-bg span {
@@ -105,7 +45,42 @@
   100% { opacity: 0; transform: translateY(-150px); }
 }
 
-/* SCROLL ICON */
+/* HERO CONTENT */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 20px;
+  max-width: 800px;
+}
+
+.greeting {
+  color: #c0392b;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.hero-name {
+  color: #f4e4bc;
+  font-size: clamp(3rem, 8vw, 5rem);
+  margin-bottom: 15px;
+}
+
+.hero-bio {
+  color: #f4e4bc;
+  font-size: clamp(1.2rem, 3vw, 1.7rem);
+  margin-bottom: 20px;
+}
+
+.hero-tagline {
+  color: rgba(244, 228, 188, 0.75);
+  max-width: 650px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+/* SCROLL */
 .scroll-down {
   position: absolute;
   bottom: 80px;
@@ -123,16 +98,12 @@
   60% { transform: translateX(-50%) translateY(-5px); }
 }
 
-/* ===== ROPE SYSTEM ===== */
+/* ROPE SYSTEM */
 .resume-pull-container {
   position: fixed;
-  top: 55px;
+  top: 68px;
   right: 0px;
   z-index: 999;
-  user-select: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .resume-message {
@@ -141,7 +112,6 @@
   width: 160px;
   text-align: center;
   margin-top: 6px;
-  margin-bottom: 0;
   animation: floatHint 2s ease-in-out infinite;
 }
 
@@ -157,12 +127,9 @@
 
 .rope-svg {
   overflow: visible;
-  display: block;
 }
 
-/* Ball cursor is set inline via style prop on the <g> */
-
-/* ===== PIRATE BOTTOM DECORATION ===== */
+/* PIRATE BOTTOM */
 .pirate-bottom {
   position: absolute;
   bottom: 0;
@@ -178,36 +145,12 @@
   position: absolute;
   width: 200%;
   height: 20px;
-  background: repeating-linear-gradient(
-    -45deg,
-    transparent,
-    transparent 10px,
-    rgba(244, 228, 188, 0.1) 10px,
-    rgba(244, 228, 188, 0.1) 20px
-  );
+  background: repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(244, 228, 188, 0.1) 10px, rgba(244, 228, 188, 0.1) 20px);
 }
 
-.wave-line.w1 {
-  bottom: 10px;
-  left: -50%;
-  animation: waveMove 15s linear infinite;
-  opacity: 0.3;
-}
-
-.wave-line.w2 {
-  bottom: 20px;
-  left: -30%;
-  animation: waveMove 20s linear infinite;
-  opacity: 0.2;
-  height: 15px;
-}
-
-.wave-line.w3 {
-  bottom: 30px;
-  left: -60%;
-  animation: waveMove 25s linear infinite;
-  opacity: 0.15;
-}
+.wave-line.w1 { bottom: 10px; left: -50%; animation: waveMove 15s linear infinite; opacity: 0.3; }
+.wave-line.w2 { bottom: 20px; left: -30%; animation: waveMove 20s linear infinite; opacity: 0.2; height: 15px; }
+.wave-line.w3 { bottom: 30px; left: -60%; animation: waveMove 25s linear infinite; opacity: 0.15; }
 
 @keyframes waveMove {
   0% { transform: translateX(0); }
@@ -255,6 +198,7 @@
   }
   .resume-pull-container {
     right: 0px;
+    top:54px;
   }
   .resume-message {
     width: 120px;
