@@ -227,7 +227,7 @@ const Education = () => {
             <div className="ship-hull"></div>
             <div className="ship-mast">
               <div className="ship-sail">
-                <text>🏴‍☠️</text>
+                <p>🏴‍☠️</p>
               </div>
             </div>
             <div className="ship-flag">🏴‍☠️</div>
